@@ -47,7 +47,7 @@
 </script>
 
 <div class="flex justify-center min-h-screen bg-pink-200">
-	<div class="w-full max-w-[1000px] p-5">
+	<div class="w-full max-w-[1000px] p-5 mt-10">
 		<h1 class="mb-3 text-center text-2xl">
 			{data.game.text}
 		</h1>
