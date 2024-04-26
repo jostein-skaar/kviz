@@ -65,7 +65,7 @@
 					class:opacity-20={question.isShown}
 					on:click={() => showQuestion(question)}
 				>
-					<div class="text-xl px-2 py-1 rounded-full bg-blue-700 text-white absolute top-2 right-2">
+					<div class="text-xl px-2 py-1 rounded-full bg-pink-500 text-white absolute top-2 right-2">
 						{question.pointsText}
 					</div>
 					<div>{question.tempText}</div>
