@@ -13,7 +13,7 @@ controller_x = 64;
 controller_y = 105;
 controller_z = 21;
 
-part = "remote_lid";
+part = "remote";
 if (part == "remote")
 {
   remote();
@@ -92,13 +92,14 @@ module remote()
       }
     }
 
-    // Odek
-    up(wall) fwd(11) position(BOT + BACK)
-    {
-      resize([ 30, 0, 0.2 ], auto = true) linear_extrude(height = 1) import("odek-logo.svg", center = true);
-      fwd(10)
-        text3d("kviz.it  odek.no", h = 0.2, size = 4.5, font = "Arial", orient = UP, anchor = BOT + FWD, center = true);
-    }
+    // // Odek
+    // up(wall) fwd(11) position(BOT + BACK)
+    // {
+    //   resize([ 30, 0, 0.2 ], auto = true) linear_extrude(height = 1) import("odek-logo.svg", center = true);
+    //   fwd(10)
+    //     text3d("kviz.it  odek.no", h = 0.2, size = 4.5, font = "Arial", orient = UP, anchor = BOT + FWD, center =
+    //     true);
+    // }
 
     up(wall) back(wall + 0.5) position(BOT + FWD)
     {
