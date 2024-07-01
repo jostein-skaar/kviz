@@ -1,3 +1,13 @@
 {
-	"cSpell.words": ["supabase"]
+	"cSpell.words": ["supabase"],
+
+	"[scad]": {
+		"editor.defaultFormatter": "jkillian.custom-local-formatters"
+	},
+	"customLocalFormatters.formatters": [
+		{
+			"command": "clang-format",
+			"languages": ["scad"]
+		}
+	]
 }
