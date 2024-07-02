@@ -58,6 +58,11 @@ else if (part == "button_cap_d")
 {
   button_cap("../../kviz/3d-models/kviz-button-d.svg", size = [ 14.44, 14.44 ], offset = [ 0, 0 ]);
 }
+else if (part == "microbit_soldering_guide")
+{
+  microbit_soldering_guide(text = "kviz", pins_to_show = [ 1, 23, 24, 25, 26, 35 ],
+                           pin_text = " G             23.......1   ", $fn = 64);
+}
 
 module remote()
 {
