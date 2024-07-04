@@ -20,7 +20,7 @@ if (part == "remote")
 }
 else if (part == "remote_lid")
 {
-  box_sliding_lid(controller_x, controller_y, controller_z, wall, $slop = 0.15);
+  box_sliding_lid(controller_x, controller_y, controller_z, wall, extra_friction_stops = [29.4], $slop = 0.15);
 }
 else if (part == "microbit_connector_fastener")
 {
@@ -69,7 +69,7 @@ module remote()
   diff() box_sliding(controller_x, controller_y, controller_z, wall, inner_walls = [73.3], anchor = BOT)
   {
     // Holes for the microbit battery wire
-    tag("remove") left(wall) fwd(wall) position(BOT + BACK + RIGHT)
+    tag("remove") left(wall + 0.8) fwd(wall + 0.8) position(BOT + BACK + RIGHT)
       microbit_battery_pack_wire_hole(wall, anchor = BOT + BACK + RIGHT);
 
     // Show the microbit battery pack
@@ -92,19 +92,10 @@ module remote()
       {
         tag("remove") microbit_connector_hole(wall, anchor = BOT + FWD);
 
-        tag("keep") microbit_connector(pins_to_show = [ 1, 23, 24, 25, 26, 35 ], pin_text = " G         23...1   ",
-                                       anchor = BOT + FWD);
+        tag("keep") microbit_connector(pins_to_show = [ 1, 23, 24, 25, 26, 35 ],
+                                       pin_text = "        G       P16..P13   ", anchor = BOT + FWD);
       }
     }
-
-    // // Odek
-    // up(wall) fwd(11) position(BOT + BACK)
-    // {
-    //   resize([ 30, 0, 0.2 ], auto = true) linear_extrude(height = 1) import("odek-logo.svg", center = true);
-    //   fwd(10)
-    //     text3d("kviz.it  odek.no", h = 0.2, size = 4.5, font = "Arial", orient = UP, anchor = BOT + FWD, center =
-    //     true);
-    // }
 
     up(wall) back(wall + 0.5) position(BOT + FWD)
     {
