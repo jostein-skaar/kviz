@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Question from '$lib/Question.svelte';
 
 	import { onMount } from 'svelte';
