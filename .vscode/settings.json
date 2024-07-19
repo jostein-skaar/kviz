@@ -9,5 +9,6 @@
 			"command": "clang-format",
 			"languages": ["scad"]
 		}
-	]
+	],
+	"tailwindCSS.experimental.configFile": "tailwind.config.ts"
 }
