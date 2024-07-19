@@ -3,6 +3,7 @@ include<../../3d-parts-library/src/box.scad>;
 include<../../3d-parts-library/src/microbit.scad>;
 include<../../3d-parts-library/src/el-parts.scad>;
 include<../../3d-parts-library/src/jst.scad>;
+include<../../3d-parts-library/src/misc.scad>;
 // clang-format on
 
 show_battery_pack = $preview ? false : false;
@@ -20,7 +21,7 @@ if (part == "remote")
 }
 else if (part == "remote_lid")
 {
-  box_sliding_lid(controller_x, controller_y, controller_z, wall, extra_friction_stops = [29.4], $slop = 0.15);
+  box_sliding_lid(controller_x, controller_y, wall, extra_friction_stops = [29.4], $slop = 0.15);
 }
 else if (part == "microbit_connector_fastener")
 {
@@ -42,6 +43,10 @@ else if (part == "jst_female")
 {
   jst_female(n = 5, $slop = 0.1);
 }
+else if (part == "wire_cutter_guide_1_4")
+{
+  wire_cutter_guide(d = 1.4);
+}
 else if (part == "button_cap_a")
 {
   button_cap("../../kviz/3d-models/kviz-button-a.svg", size = [ 16, 14.44 ], offset = [ 0, 0.2 ]);
@@ -60,8 +65,8 @@ else if (part == "button_cap_d")
 }
 else if (part == "microbit_soldering_guide")
 {
-  microbit_soldering_guide(text = "kviz", pins_to_show = [ 1, 23, 24, 25, 26, 35 ],
-                           pin_text = " G             23.......1   ", $fn = 64);
+  microbit_soldering_guide(text = "kviz", pins_to_show = [ 1, 4, 12, 21, 26, 35 ], pins_to_bend = [ 4, 12, 21, 26, 35 ],
+                           pin_text = " G      16P2 P1  P0 1");
 }
 
 module remote()
@@ -92,14 +97,14 @@ module remote()
       {
         tag("remove") microbit_connector_hole(wall, anchor = BOT + FWD);
 
-        tag("keep") microbit_connector(pins_to_show = [ 1, 23, 24, 25, 26, 35 ],
-                                       pin_text = "        G       P16..P13   ", anchor = BOT + FWD);
+        tag("keep") microbit_connector(pins_to_show = [ 1, 4, 12, 21, 26, 35 ], pin_text = "    G  P16 P2   P1  P0",
+                                       anchor = BOT + FWD);
       }
     }
 
     up(wall) back(wall + 0.5) position(BOT + FWD)
     {
-      text3d("v1", h = 0.2, size = 4, font = "Arial", orient = UP, anchor = BOT + FWD, center = true);
+      text3d("v1.1", h = 0.2, size = 4, font = "Arial", orient = UP, anchor = BOT + FWD, center = true);
     }
   }
 }
