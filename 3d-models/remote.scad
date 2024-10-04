@@ -14,7 +14,7 @@ controller_x = 64;
 controller_y = 105;
 controller_z = 21;
 
-part = "remote";
+part = "wire_cutter_guide_box";
 if (part == "remote")
 {
   remote();
@@ -42,10 +42,6 @@ else if (part == "jst_male")
 else if (part == "jst_female")
 {
   jst_female(n = 5, $slop = 0.1);
-}
-else if (part == "wire_cutter_guide_1_4")
-{
-  wire_cutter_guide(d = 1.4);
 }
 else if (part == "button_cap_a")
 {

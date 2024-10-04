@@ -15,5 +15,3 @@
 @REM openscad -D "part=\"jst_female\"" -o stl/jst_female-v1.stl remote.scad
 
 @REM openscad -D "part=\"microbit_soldering_guide\"" -o stl/microbit_soldering_guide-v1.stl remote.scad
-
-openscad -D "part=\"wire_cutter_guide_1_4\"" -o stl/wire_cutter_guide_1_4-v1.stl remote.scad
