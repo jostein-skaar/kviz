@@ -2,9 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-green #56e569
-red #ff112a
-blue #00a8ff
-yellow #fff100
- */
+:root {
+	--green: #56e569;
+	--red: #ff112a;
+	--blue: #00a8ff;
+	--yellow: #fff100;
+}
+
+.kviz-bg-green {
+	background-color: var(--green);
+}
+.kviz-bg-red {
+	background-color: var(--red);
+}
+.kviz-bg-blue {
+	background-color: var(--blue);
+}
+.kviz-bg-yellow {
+	background-color: var(--yellow);
+}
+
+.kviz-outline-green {
+	outline: 1px solid var(--green);
+}
+.kviz-outline-red {
+	outline: 1px solid var(--red);
+}
+.kviz-outline-blue {
+	outline: 1px solid var(--blue);
+}
+.kviz-outline-yellow {
+	outline: 1px solid var(--yellow);
+}
